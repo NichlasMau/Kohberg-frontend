@@ -1,9 +1,8 @@
 /********** Template CSS **********/
 :root {
-    --primary: #e2d8be;
+    --primary: #BCA37F;
     --secondary: #f2f2f2;
-    --light: #6C7293;
-    --dark: #fff;
+    --light: #6C7293;    
 }
 
 .back-to-top {
