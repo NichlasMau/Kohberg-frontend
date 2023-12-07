@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a78268ef-46ad-4fd0-b18d-a93ad30c2e47" name="Changes" comment="Frontend added to Azure">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,6 +65,7 @@
       <workItem from="1700650713120" duration="3392000" />
       <workItem from="1701683782043" duration="1839000" />
       <workItem from="1701689598382" duration="1794000" />
+      <workItem from="1701779894720" duration="433000" />
     </task>
     <task id="LOCAL-00001" summary="Frontend added to Azure">
       <option name="closed" value="true" />

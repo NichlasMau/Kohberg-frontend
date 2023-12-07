@@ -121,7 +121,7 @@
 
 
     // Single Line Chart
-    var ctx3 = $("#line-chart").get(0).getContext("2d");
+    var ctx3 = $("#line-chart")[0].getContext("2d");
     var myChart3 = new Chart(ctx3, {
         type: "line",
         data: {
@@ -186,6 +186,7 @@
 
 
     // Doughnut Chart
+    
     var ctx6 = $("#doughnut-chart").get(0).getContext("2d");
     var myChart6 = new Chart(ctx6, {
         type: "doughnut",
