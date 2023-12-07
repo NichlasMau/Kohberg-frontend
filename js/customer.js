@@ -1,4 +1,3 @@
-
 async function createCustomer() {
     try {
       const customerForm = document.getElementById('customerForm');
@@ -32,23 +31,8 @@ async function createCustomer() {
       event.preventDefault(); // Forhindrer formen i at blive indsendt på traditionel måde
       createCustomer();
     });
-
+  });
   
-
-    // Your logic for creating a customer in the database goes here
-    // For example, you might use a database ORM like Mongoose for MongoDB
-    res.json({ message: 'Customer created successfully' });
-  } catch (error) {
-    console.error('Error creating customer:', error);
-    res.status(500).json({ error: 'Internal server error' });
-  }
-
-
-// Start the server
-const port = 3000;
-app.listen(port, () => {
-  console.log(`Server is running on port ${port}`);
-});
 
 // Funktion for at vise opret kunde formular
  function visOpretKundeForm() {
