@@ -1,0 +1,356 @@
+{
+    "categories": [
+      {
+        "name": "Rugbrød & Kernebrød",
+        "url": "https://kohberg.dk/vores-broed/broedoversigt/rugbroed-kernebroed/",
+        "products": [
+          {
+            "name": "Familierugbrød",
+            "id": 2808,
+            "productImageUrl": "https://kohberg.dk/media/oobnp0pq/kohberg_familierugbroed_pack.png",
+            "productContents": "20 skiver ",
+            "productWeight": "750 g."
+          },
+          {
+            "name": "Økologisk Solsikkerugbrød",
+            "id": 2114,
+            "productImageUrl": "https://kohberg.dk/media/q31gnkl3/kohberg_mb_oekologisk-solsikkerugbroed_pack.png",
+            "productContents": "17 skiver ",
+            "productWeight": "600 g."
+          },
+          {
+            "name": "Bagernes Bedste",
+            "id": 2074,
+            "productImageUrl": "https://kohberg.dk/media/4gvnagck/kohberg_bagernes-bedste-rugbroed_pack.png",
+            "productContents": "13 skiver",
+            "productWeight": "600 g. "
+          },
+          {
+            "name": "Mesterværk",
+            "id": 1995,
+            "productImageUrl": "https://kohberg.dk/media/cbkgkvxl/kohberg_mestervaerk-rugbroed_pack.png",
+            "productContents": "13 skiver",
+            "productWeight": "600 g. "
+          },
+          {
+            "name": "Solsikke & Hørfrørugbrød",
+            "id": 2071,
+            "productImageUrl": "https://kohberg.dk/media/f41lmcma/kohberg_solsikke-og-hoerfroerugbroed_pack.png",
+            "productContents": "13 skiver",
+            "productWeight": "575 g. "
+          },
+          {
+            "name": "Solsikke",
+            "id": 1838,
+            "productImageUrl": "https://kohberg.dk/media/e24cvfc1/kohberg_solsikke-rugbroed-750-g_pack.png",
+            "productContents": "20 skiver",
+            "productWeight": "750 g. "
+          },
+          {
+            "name": "Solsikke",
+            "id": 1836,
+            "productImageUrl": "https://kohberg.dk/media/t3ef4paj/kohberg_solsikkerugbroed-950-g_pack.png",
+            "productContents": "26 skiver",
+            "productWeight": "950 g. "
+          },
+          {
+            "name": "Herkules",
+            "id": 1773,
+            "productImageUrl": "https://kohberg.dk/media/pobfwaz5/kohberg_herkules-rugbroed-500-g_pack.png",
+            "productContents": "9 skiver",
+            "productWeight": "500 g. "
+          },
+          {
+            "name": "Herkules",
+            "id": 1824,
+            "productImageUrl": "https://kohberg.dk/media/njvd1wqo/kohberg_herkules-rugbroed-1000-g_pack.png",
+            "productContents": "18 skiver",
+            "productWeight": "1000 g. "
+          },
+          {
+            "name": "Viking",
+            "id": 2001,
+            "productImageUrl": "https://kohberg.dk/media/rr1jfgph/kohberg_viking-rugbroed-1000-g_pack.png",
+            "productContents": "18 skiver",
+            "productWeight": "1000 g. "
+          },
+          {
+            "name": "Øko Rugbrød",
+            "id": 1996,
+            "productImageUrl": "https://kohberg.dk/media/yignjg2a/kohberg_oeko-rugbroed-600-g_pack.png",
+            "productContents": "17 skiver",
+            "productWeight": "600 g. "
+          },
+          {
+            "name": "Gulerodsrugbrød",
+            "id": 2078,
+            "productImageUrl": "https://kohberg.dk/media/lbpizjwl/kohberg_gulerodsrugbroed-750-g_pack.png",
+            "productContents": "20 skiver",
+            "productWeight": "750 g. "
+          },
+          {
+            "name": "Proteinbrød",
+            "id": 2002,
+            "productImageUrl": "https://kohberg.dk/media/ixwhpifg/kohberg_proteinbroed_pack.png",
+            "productContents": "18 skiver",
+            "productWeight": "600 g. "
+          },
+          {
+            "name": "Fuldkornsrugbrød",
+            "id": 2075,
+            "productImageUrl": "https://kohberg.dk/media/fnabwi4o/kohberg_moellens-broed_fuldkornsrugbroed_pack.png",
+            "productContents": "10 skiver",
+            "productWeight": "500 g. "
+          },
+          {
+            "name": "Schwarzbrot",
+            "id": 2073,
+            "productImageUrl": "https://kohberg.dk/media/j5sdeee2/kohberg_moellens-broed_schwarzbrot_pack.png",
+            "productContents": "9 skiver",
+            "productWeight": "500 g. "
+          },
+          {
+            "name": "Mørkt Rugbrød",
+            "id": 2070,
+            "productImageUrl": "https://kohberg.dk/media/qxspcjmy/kohberg_moellens-broed_moerkt-rugbroed_pack.png",
+            "productContents": "10 skiver",
+            "productWeight": "500 g. "
+          },
+          {
+            "name": "Bondebrød",
+            "id": 2069,
+            "productImageUrl": "https://kohberg.dk/media/ja2bieyj/kohberg_moellens-broed_bondebroed_pack.png",
+            "productContents": "8 skiver",
+            "productWeight": "400 g. "
+          },
+          {
+            "name": "Økologisk Bondebrød",
+            "id": 2076,
+            "productImageUrl": "https://kohberg.dk/media/c1fgudow/kohberg_oekologisk-bondebroed_pack.png",
+            "productContents": "8 skiver",
+            "productWeight": "400 g. "
+          }
+        ]
+      },
+      {
+        "name": "Burgerboller & Pølsebrød",
+            "url": "https://kohberg.dk/vores-broed/broedoversigt/burgerboller-poelsebroed/",
+            "products": [
+                {
+                    "name": "Fuldkorn Burger",
+                    "id": 2054,
+                    "productImageUrl": "https://kohberg.dk/media/h2zpbihn/kohberg_fuldkorn-burger_pack.png",
+                    "productContents": "4 stk.",
+                    "productWeight": "330 g."
+                  },
+                  {
+                    "name": "Gigant Smash Burger",
+                    "id": 2038,
+                    "productImageUrl": "https://kohberg.dk/media/rkgfp2on/kohberg_gigant-smash-burger_pack.png",
+                    "productContents": "4 stk.",
+                    "productWeight": "330 g."
+                  },
+                  {
+                    "name": "Hamburgerboller",
+                    "id": 2023,
+                    "productImageUrl": "https://kohberg.dk/media/jlkcnn0i/kohberg_moellens-broed_hamburgerboller_pack.png",
+                    "productContents": "6 stk.",
+                    "productWeight": "330 g."
+                  },
+                  {
+                    "name": "Madbrød - perfekt til Pita",
+                    "id": 2055,
+                    "productImageUrl": "https://kohberg.dk/media/ydmpwi1q/kohberg_madbroed-perfekt-til-pita_pack.png",
+                    "productContents": "4 stk.",
+                    "productWeight": "330 g."
+                  },
+                  {
+                    "name": "Pølsebrød",
+                    "id": 2007,
+                    "productImageUrl": "https://kohberg.dk/media/0lboxwcr/kohberg_moellens-broed_poelsebroed_pack.png",
+                    "productContents": "14 stk.",
+                    "productWeight": "430 g."
+                  },
+                  {
+                    "name": "Smørbagt Hotdog",
+                    "id": 2009,
+                    "productImageUrl": "https://kohberg.dk/media/v1uoxuc1/kohberg_smoerbagt-hotdog_pack.png",
+                    "productContents": "8 stk.",
+                    "productWeight": "360 g."
+                  },
+                  {
+                    "name": "Økologisk Fuldkornsburger",
+                    "id": 2057,
+                    "productImageUrl": "https://kohberg.dk/media/oi4hvluc/kohberg_oekologisk-fuldkornsburger_pack.png",
+                    "productContents": "4 stk.",
+                    "productWeight": "240 g."
+                  }
+            ]
+      },
+      {
+        "name": "Sandwich & Toast",
+        "url": "https://kohberg.dk/vores-broed/broedoversigt/sandwich-toast/",
+        "products": [
+            {
+                "name": "Durum Café Sandwich",
+                "id": 1691,
+                "productImageUrl": "https://kohberg.dk/media/4cxbysb1/kohberg_durum-cafe-sandwich_pack.png",
+                "productContents": "4 stk.",
+                "productWeight": "440 g."
+              },
+              {
+                "name": "Grov Café Sandwich",
+                "id": 1692,
+                "productImageUrl": "https://kohberg.dk/media/hdwnzxhf/kohberg_grov-cafe-sandwich_pack.png",
+                "productContents": "4 stk.",
+                "productWeight": "400 g."
+              },
+              {
+                "name": "Kartoffelsandwich",
+                "id": 2477,
+                "productImageUrl": "https://kohberg.dk/media/5wslishz/kohberg_kartoffelsandwich_400g_pack.png",
+                "productContents": "8 skiver",
+                "productWeight": "400 g."
+              },
+              {
+                "name": "Rugsandwich",
+                "id": 2478,
+                "productImageUrl": "https://kohberg.dk/media/asjnxkso/kohberg_rugsandwich_400g_pack.png",
+                "productContents": "8 skiver",
+                "productWeight": "400 g."
+              },
+              {
+                "name": "Hvedesandwich",
+                "id": 2037,
+                "productImageUrl": "https://kohberg.dk/media/u0hheegc/kohberg_moellens-broed_hvedesandwich_pack.png",
+                "productContents": "16 skiver",
+                "productWeight": "800 g."
+              },
+              {
+                "name": "Fuldkorns Sandwich",
+                "id": 2036,
+                "productImageUrl": "https://kohberg.dk/media/ftigqtom/kohberg_moellens-broed_fuldkornssandwich_pack.png",
+                "productContents": "16 skiver",
+                "productWeight": "800 g."
+              },
+              {
+                "name": "Hvedetoast",
+                "id": 2027,
+                "productImageUrl": "https://kohberg.dk/media/345luuky/kohberg_moellens-broed_hvedetoast_pack.png",
+                "productContents": "18 skiver",
+                "productWeight": "600 g."
+              },
+              {
+                "name": "Fuldkornstoast",
+                "id": 2028,
+                "productImageUrl": "https://kohberg.dk/media/cqihc4la/kohberg_moellens-broed_fuldkornstoast_pack.png",
+                "productContents": "18 skiver",
+                "productWeight": "600 g."
+              }
+        ]
+      },
+      {
+        "name": "Boller",
+            "url": "https://kohberg.dk/vores-broed/broedoversigt/boller/",
+            "products": [
+                {
+                    "name": "Stenovnsbagt Ciabatta",
+                    "id": 2104,
+                    "productImageUrl": "https://kohberg.dk/media/cq0jqwtl/kohberg_stenovnsbagt-ciabatta_pack.png",
+                    "productContents": "8 stk.",
+                    "productWeight": "420 g."
+                  },
+                  {
+                    "name": "Grødboller",
+                    "id": 2101,
+                    "productImageUrl": "https://kohberg.dk/media/o5ehau4q/kohberg_groedboller_pack.png",
+                    "productContents": "6 stk.",
+                    "productWeight": "450 g."
+                  },
+                  {
+                    "name": "Gyldenmask Boller",
+                    "id": 2115,
+                    "productImageUrl": "https://kohberg.dk/media/xhrdykou/kohberg_gyldenmask-boller_pack.png",
+                    "productContents": "8 stk.",
+                    "productWeight": "600 g."
+                  },
+                  {
+                    "name": "Yoghurtboller",
+                    "id": 2098,
+                    "productImageUrl": "https://kohberg.dk/media/jf2jgmsb/kohberg_yoghurtboller_pack.png",
+                    "productContents": "8 stk.",
+                    "productWeight": "490 g."
+                  },
+                  {
+                    "name": "Rugmild boller",
+                    "id": 2161,
+                    "productImageUrl": "https://kohberg.dk/media/tvcp3cyb/kohberg_rugmild-boller_pack.png",
+                    "productContents": "8 stk.",
+                    "productWeight": "500 g."
+                  },
+                  {
+                    "name": "Rugbrødsboller",
+                    "id": 2109,
+                    "productImageUrl": "https://kohberg.dk/media/pzvc1knf/kohberg_rugbroedsboller_pack.png",
+                    "productContents": "8 stk.",
+                    "productWeight": "500 g."
+                  },
+                  {
+                    "name": "Solskinsboller",
+                    "id": 2162,
+                    "productImageUrl": "https://kohberg.dk/media/gtecmhnu/kohberg_solskinsboller_pack.png",
+                    "productContents": "6 stk.",
+                    "productWeight": "390 g."
+                  },
+                  {
+                    "name": "Protein Boller",
+                    "id": 2107,
+                    "productImageUrl": "https://kohberg.dk/media/znanrrtm/kohberg_proteinboller_pack.png",
+                    "productContents": "6 stk.",
+                    "productWeight": "450 g."
+                  },
+                  {
+                    "name": "Krydderboller",
+                    "id": 2105,
+                    "productImageUrl": "https://kohberg.dk/media/zxketd2z/kohberg_moellens-broed_krydderboller_pack.png",
+                    "productContents": "12 stk.",
+                    "productWeight": "700 g."
+                  },
+                  {
+                    "name": "Fuldkornskrydderboller",
+                    "id": 2102,
+                    "productImageUrl": "https://kohberg.dk/media/qesjat0g/kohberg_moellens-broed_fuldkornskrydderboller_pack.png",
+                    "productContents": "12 stk.",
+                    "productWeight": "800 g."
+                  },
+                  {
+                    "name": "Hvedeknopper",
+                    "id": 2164,
+                    "productImageUrl": "https://kohberg.dk/media/squj0gg3/kohberg_moellens-broed_hvedeknopper_pack.png",
+                    "productContents": "6 stk.",
+                    "productWeight": "400 g."
+                  }
+            ]
+        },
+        {
+            "name": "Franskbrød",
+            "url": "https://kohberg.dk/vores-broed/broedoversigt/franskbroed/",
+            "products": [
+                {
+                    "name": "Yoghurtfranskbrød",
+                    "id": 2081,
+                    "productImageUrl": "https://kohberg.dk/media/czvmbpa1/kohberg_moellens-broed_yoghurtfranskbroed_pack.png",
+                    "productContents": "",
+                    "productWeight": "600 g."
+                  },
+                  {
+                    "name": "Sødmælksfranskbrød",
+                    "id": 2080,
+                    "productImageUrl": "https://kohberg.dk/media/cf0h2anc/kohberg_moellens-broed_soedmaelksfranskbroed_pack.png",
+                    "productContents": "",
+                    "productWeight": "600 g."
+                  }
+            ]
+        }
+    ]
+  }
