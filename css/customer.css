@@ -33,3 +33,16 @@
             background-color: #45a049;
         }
     
+    /* Add this to your CSS or style tag */
+        #createCustomerModal {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60%; /* Set your desired width */
+            max-width: 600px; /* Set your desired max width */
+            height: auto; /* Set your desired height or use auto for content-based height */
+            max-height: 80vh; /* Set your desired max height */
+            overflow: auto;
+        }
