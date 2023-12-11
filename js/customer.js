@@ -119,11 +119,29 @@ class YourClassName {
       });
     }
   }
+}
+
+  function openMyProfileModal() {
+    const modal = document.getElementById('myProfileModal');
+    modal.style.display = 'block';
+}
+
+function closeMyProfileModal() {
+    const modal = document.getElementById('myProfileModal');
+    modal.style.display = 'none';
+}
 
   domContentLoaded = () => {
     this.addCustomerLink();
   }
+
+  function openMyProfileModal() {
+    console.log('Opening My Profile Modal');
+    const modal = document.getElementById('myProfileModal');
+    modal.style.display = 'block';
 }
+
+
 
 // Opret en instans af klassen med det opdaterede API-base-URL
 const yourInstance = new YourClassName('http://localhost:8080');
