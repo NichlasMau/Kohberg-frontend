@@ -69,19 +69,20 @@
     var myChart1 = new Chart(ctx1, {
         type: "bar",
         data: {
-            labels: ["2016", "2017", "2018", "2019", "2020", "2021", "2022"],
+            labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+
             datasets: [{
-                    label: "USA",
+                    label: "Sjælland",
                     data: [15, 30, 55, 65, 60, 80, 95],
                     backgroundColor: "rgba(207, 183, 149, .7)"
                 },
                 {
-                    label: "UK",
+                    label: "Fyn",
                     data: [8, 35, 40, 60, 70, 55, 75],
                     backgroundColor: "rgba(207, 183, 149, .5)"
                 },
                 {
-                    label: "AU",
+                    label: "Jylland",
                     data: [12, 25, 45, 55, 65, 70, 60],
                     backgroundColor: "rgba(207, 183, 149, .3)"
                 }
@@ -98,17 +99,19 @@
     var myChart2 = new Chart(ctx2, {
         type: "line",
         data: {
-            labels: ["2016", "2017", "2018", "2019", "2020", "2021", "2022"],
+            labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
             datasets: [{
-                    label: "Salse",
+                    label: "Sales",
                     data: [15, 30, 55, 45, 70, 65, 85],
                     backgroundColor: "rgba(207, 183, 149, .7)",
+                    borderColor: "rgba(207, 183, 149)",
                     fill: true
                 },
                 {
                     label: "Revenue",
                     data: [99, 135, 170, 130, 190, 180, 270],
                     backgroundColor: "rgba(207, 183, 149, .5)",
+                    borderColor: "rgba(207, 183, 149)",
                     fill: true
                 }
             ]
@@ -127,8 +130,13 @@
         data: {
             labels: [50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150],
             datasets: [{
-                label: "Salse",
+                label: "Sales",
+
                 fill: false,
+
+                borderColor: "rgba(207, 183, 149)",
+                fill: true,
+
                 backgroundColor: "rgba(207, 183, 149, .7)",
                 data: [7, 8, 8, 9, 9, 9, 10, 11, 14, 14, 15]
             }]

@@ -11,7 +11,7 @@
   text-align: center;
   -webkit-tap-highlight-color: transparent; }
   .owl-theme .owl-nav [class*='owl-'] {
-    color: #554d56;
+    color: #f5f5f5;
     font-size: 14px;
     margin: 5px;
     padding: 4px 7px;
@@ -21,7 +21,7 @@
     border-radius: 3px; }
     .owl-theme .owl-nav [class*='owl-']:hover {
       background: #869791;
-      color: #554d56;
+      color: #f5f5f5;
       text-decoration: none; }
   .owl-theme .owl-nav .disabled {
     opacity: 0.5;
