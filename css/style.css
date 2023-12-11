@@ -2,7 +2,8 @@
 :root {
     --primary: #BCA37F;
     --secondary: #fefefe;
-    --light: #6C7293;    
+    --light: #6C7293;
+    --grey: #F5F5F5;    
 }
 
 .back-to-top {
@@ -289,3 +290,53 @@ th {
     background: var(--dark);
     border-color: var(--primary);
 }
+
+
+
+
+/* Reminders Page start*/
+
+
+#reminderSection {
+    /* background-color: #F5F5F5; */
+    padding-top: 5%;
+}
+
+#reminderSection .row {  
+}
+
+#reminderSection .row .my-4 {
+   
+}
+
+
+/* create reminder */
+
+#createReminder {
+    
+}
+
+
+
+/* getAllReminders */
+
+#getAllReminders {
+    
+}
+
+
+/* updateReminder */
+
+#updateReminder {
+    
+}
+
+
+/* deleteReminder */
+
+#deleteReminder {
+    
+}
+
+
+/* Reminders Page End*/
