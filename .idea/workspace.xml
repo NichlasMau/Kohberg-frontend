@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a78268ef-46ad-4fd0-b18d-a93ad30c2e47" name="Changes" comment="Frontend added to Azure" />
+    <list default="true" id="a78268ef-46ad-4fd0-b18d-a93ad30c2e47" name="Changes" comment="Frontend added to Azure">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/customer.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/customer.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -65,7 +69,7 @@
       <workItem from="1701689598382" duration="1794000" />
       <workItem from="1701779894720" duration="433000" />
       <workItem from="1702201806222" duration="602000" />
-      <workItem from="1702291327263" duration="532000" />
+      <workItem from="1702291327263" duration="593000" />
     </task>
     <task id="LOCAL-00001" summary="Frontend added to Azure">
       <option name="closed" value="true" />
