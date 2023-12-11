@@ -28,6 +28,9 @@
     opacity: 1;
 }
 
+th {
+    color: #554d56;
+}
 
 /*** Button ***/
 .btn {

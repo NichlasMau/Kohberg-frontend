@@ -103,12 +103,14 @@
                     label: "Salse",
                     data: [15, 30, 55, 45, 70, 65, 85],
                     backgroundColor: "rgba(207, 183, 149, .7)",
+                    borderColor: "rgba(207, 183, 149)",
                     fill: true
                 },
                 {
                     label: "Revenue",
                     data: [99, 135, 170, 130, 190, 180, 270],
                     backgroundColor: "rgba(207, 183, 149, .5)",
+                    borderColor: "rgba(207, 183, 149)",
                     fill: true
                 }
             ]
@@ -127,8 +129,9 @@
         data: {
             labels: [50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150],
             datasets: [{
-                label: "Salse",
-                fill: false,
+                label: "Sales",
+                borderColor: "rgba(207, 183, 149)",
+                fill: true,
                 backgroundColor: "rgba(207, 183, 149, .7)",
                 data: [7, 8, 8, 9, 9, 9, 10, 11, 14, 14, 15]
             }]
