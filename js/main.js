@@ -1,3 +1,4 @@
+
     (function ($) {
     "use strict";
 
@@ -63,8 +64,127 @@
     Chart.defaults.color = "#6C7293";
     Chart.defaults.borderColor = "#000000";
 
+ // Token and API fetch
+ 
+const apiToken = 'dzagui0hq3z80kyf1jr40l10apxdweuiybq6zko4';
+const apiEndpoint = 'https://api.json-generator.com/templates/s5vsN1doCVHK/data';
 
-    // Worldwide Sales Chart
+ fetch(apiEndpoint, {
+     headers: {
+         Authorization: `Bearer ${apiToken}`,
+     },
+ })
+     .then(response => response.json())
+     .then(data => {
+         updateChartsWithData(data);
+     })
+     .catch(error => {
+         console.error('Error fetching data:', error);
+     });
+
+ function updateChartsWithData(data) {
+     updateWorldwideSalesChart(data);
+     updateSalseRevenueChart(data);
+     // Add other chart updates if needed
+ }
+
+// Function to update the Worldwide Sales Chart
+function updateWorldwideSalesChart(data) {
+  var ctx1 = $("#worldwide-sales").get(0).getContext("2d");
+
+  // Assuming 'data' contains sales information in the expected format
+  var monthlySalesSjælland = calculateMonthlyTotal(data, "Sjælland");
+  var monthlySalesFyn = calculateMonthlyTotal(data, "Fyn");
+  var monthlySalesJylland = calculateMonthlyTotal(data, "Jylland");
+
+  var myChart1 = new Chart(ctx1, {
+    type: "bar",
+    data: {
+      labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+      datasets: [
+        {
+          label: "Sjælland",
+          data: monthlySalesSjælland,
+          backgroundColor: "rgba(207, 183, 149, .7)",
+        },
+        {
+          label: "Fyn",
+          data: monthlySalesFyn,
+          backgroundColor: "rgba(207, 183, 149, .5)",
+        },
+        {
+          label: "Jylland",
+          data: monthlySalesJylland,
+          backgroundColor: "rgba(207, 183, 149, .3)",
+        },
+      ],
+    },
+    options: {
+      responsive: true,
+    },
+  });
+}
+// Function to update the Sales & Revenue Chart for all regions combined
+function updateSalseRevenueChart(data) {
+    var ctx2 = $("#salse-revenue").get(0).getContext("2d");
+  
+    // Extracting sales and revenue data for all regions
+    const allRegionsData = data.sales;
+  
+    // Extracting sales and revenue values for all regions
+    const allRegionsSales = allRegionsData.map(item => item.amountDKK);
+    const allRegionsRevenue = allRegionsData.map(item => item.amountDKK * 1.5); // Example: assuming revenue is 1.5 times the sales amount
+  
+    var myChart2 = new Chart(ctx2, {
+      type: "line",
+      data: {
+        labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+        datasets: [
+          {
+            label: "All Regions Sales",
+            data: allRegionsSales,
+            backgroundColor: "rgba(207, 183, 149, .7)",
+            borderColor: "rgba(207, 183, 149)",
+            fill: true,
+          },
+          {
+            label: "All Regions Revenue",
+            data: allRegionsRevenue,
+            backgroundColor: "rgba(207, 183, 149, .5)",
+            borderColor: "rgba(207, 183, 149)",
+            fill: true,
+          },
+        ],
+      },
+      options: {
+        responsive: true,
+      },
+    });
+  }
+  
+
+// Funktion til at beregne den månedlige total for en specifik region
+function calculateMonthlyTotal(data, region) {
+    return [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map(month => {
+      // Filtrer salgsdata for den givne region og måned
+      var filteredData = data.sales.filter(sale => {
+        var saleDate = new Date(sale.date);
+        return sale.region === region && saleDate.getMonth() + 1 === month;
+      });
+  
+      console.log(`Month: ${month}, Region: ${region}, Data:`, filteredData);
+  
+      // Beregn den samlede mængde for den givne måned og region
+      var monthlyTotal = filteredData.reduce((total, sale) => total + sale.amountDKK, 0);
+  
+      return monthlyTotal;
+    });
+  }
+  
+
+
+
+    /*// Worldwide Sales Chart
     var ctx1 = $("#worldwide-sales").get(0).getContext("2d");
     var myChart1 = new Chart(ctx1, {
         type: "bar",
@@ -91,10 +211,10 @@
         options: {
             responsive: true
         }
-    });
+    });*/
 
 
-    // Salse & Revenue Chart
+    /*// Salse & Revenue Chart
     var ctx2 = $("#salse-revenue").get(0).getContext("2d");
     var myChart2 = new Chart(ctx2, {
         type: "line",
@@ -144,7 +264,7 @@
         options: {
             responsive: true
         }
-    });
+    });*/
 
 
     // Single Bar Chart
