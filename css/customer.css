@@ -1,145 +1,157 @@
+body {
+  font-family: Arial, sans-serif;
+}
 
-        body {
-            font-family: Arial, sans-serif;
-        }
+form {
+  max-width: 400px;
+  margin: 20px auto;
+}
 
-        form {
-            max-width: 400px;
-            margin: 20px auto;
-        }
+label {
+  display: block;
+  margin-bottom: 8px;
+}
 
-        label {
-            display: block;
-            margin-bottom: 8px;
-        }
+input,
+select {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 16px;
+  box-sizing: border-box;
+}
 
-        input, select {
-            width: 100%;
-            padding: 8px;
-            margin-bottom: 16px;
-            box-sizing: border-box;
-        }
+button {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
 
-        button {
-            background-color: #4caf50;
-            color: white;
-            padding: 10px 15px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
+button:hover {
+  background-color: #45a049;
+}
 
-        button:hover {
-            background-color: #45a049;
-        }
-    
-    /* Add this to your CSS or style tag */
-        #createCustomerModal, #myProfileModal {        
-            display: none;
-            position: fixed;
-            top: 50%;
-            left: 51%;
-            transform: translate(-50%, -50%);
-            width: 80%; /* Set your desired width */
-            max-width: 700px; /* Set your desired max width */
-            height: auto; /* Set your desired height or use auto for content-based height */
-            max-height: 80vh; /* Set your desired max height */
-            overflow: auto;      
-            color: #fff;      
-        }
+/* Add this to your CSS or style tag */
+#createCustomerModal,
+#myProfileModal {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 51%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  /* Set your desired width */
+  max-width: 700px;
+  /* Set your desired max width */
+  height: auto;
+  /* Set your desired height or use auto for content-based height */
+  max-height: 80vh;
+  /* Set your desired max height */
+  overflow: auto;
+  color: #fff;
+}
 
-    /* AddCustomer Form */
+/* AddCustomer Form */
 
-    #formContent a {
-        color: #92badd;
-        display:inline-block;
-        text-decoration: none;
-        font-weight: 400;
-      }
-      
-    #formContent h2 {
-        text-align: center;
-        font-size: 25px;
-        font-weight: 600;
-        text-transform: uppercase;        
-        margin: 40px 8px 10px 8px; 
-        color: #cccccc;
-      } 
+#formContent {
+  -webkit-border-radius: 10px 10px 10px 10px;
+  border-radius: 10px 10px 10px 10px;
+  background: #BCA37F;
+  padding: 30px;
+  width: 90%;
+  max-width: 600px;
+  position: relative;
+  padding: 0px;
+  /* -webkit-box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
+      box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3); */
+  text-align: left;
+}
 
-    #formContent .close {
-        padding-left: 2%;
-        font-size: 35px;
-    }
-      
-      
-      /* STRUCTURE */
-      
-      .wrapper {
-        display: flex;
-        align-items: center;
-        flex-direction: column; 
-        justify-content: center;
-        width: 100%;
-        min-height: 100%;
-        padding: 20px;
-      }
-      
-      #formContent {
-        -webkit-border-radius: 10px 10px 10px 10px;
-        border-radius: 10px 10px 10px 10px;
-        background:red;
-        padding: 30px;
-        width: 90%;
-        max-width: 600px;
-        position: relative;
-        padding: 0px;
-        /* -webkit-box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
-        box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3); */
-        text-align: left;
-      }
 
-      #formContent form p {        
-        /* Prøv at for den inline-block */
-      }
+#formContent a {
+  color: #92badd;
+  display: inline-block;
+  text-decoration: none;
+  font-weight: 400;
+}
 
-      
-                                  
-      
-      /* Fade-in-down Animation */
-      .fadeInDown {
-        -webkit-animation-name: fadeInDown;
-        animation-name: fadeInDown;
-        -webkit-animation-duration: 1s;
-        animation-duration: 1s;
-        -webkit-animation-fill-mode: both;
-        animation-fill-mode: both;
-      }
-      
-      @-webkit-keyframes fadeInDown {
-        0% {
-          opacity: 0;
-          -webkit-transform: translate3d(0, -100%, 0);
-          transform: translate3d(0, -100%, 0);
-        }
-        100% {
-          opacity: 1;
-          -webkit-transform: none;
-          transform: none;
-        }
-      }
-      
-      @keyframes fadeInDown {
-        0% {
-          opacity: 0;
-          -webkit-transform: translate3d(0, -100%, 0);
-          transform: translate3d(0, -100%, 0);
-        }
-        100% {
-          opacity: 1;
-          -webkit-transform: none;
-          transform: none;
-        }
-      }
-      
-    
+#formContent h2 {
+  text-align: center;
+  font-size: 25px;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin: 40px 8px 10px 8px;
+  color: #fff;
+}
 
+#formContent .close {
+  padding-left: 2%;
+  font-size: 35px;
+}
+
+#formContent button {
+  background-color: #E7DBC9;
+}
+
+/* myProfileSection */
+
+#formContent .profileContent {
+  padding: 3% 5%;
+}
+
+#formContent h2 {
+  margin-top: -4%;
+}
+
+/* STRUCTURE */
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  min-height: 100%;
+  padding: 20px;
+}
+
+
+/* Fade-in-down Animation */
+.fadeInDown {
+  -webkit-animation-name: fadeInDown;
+  animation-name: fadeInDown;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+@-webkit-keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
