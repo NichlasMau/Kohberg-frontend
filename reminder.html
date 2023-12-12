@@ -192,50 +192,56 @@
             <!-- Navbar End -->
 
 
-            <!-- Blank Start -->
+            <!-- Blank Start -->    
+
             <div class="container-fluid">
-                <div class="row vh-100 bg-secondary rounded align-items-center justify-content-center">
-                    <div class="col-md-6 text-center text-light">
+                <div class="row vh-100 bg-grey rounded align-items-center justify-content-center">
+                    <div class="col-md-12 text-center text-light" id="reminderSection">
                         <h3>Reminders</h3>
-        
-                        <!-- Create Reminder -->
-                        <div id="createReminder" class="my-4">
-                            <h4>Create Reminder</h4>
-                            <button class="btn btn-primary" onclick="createReminder()">Create Reminder</button>
+                        <div class="container-fluid pt-4 px-4">
+                            <div class="row g-4">
+                                <div class="col-sm-12 col-xl-6">
+                                    <div class="bg-secondary text-center rounded p-5">
+                                        <h4>Create Reminder</h4>
+                                        <button class="btn btn-primary" onclick="createReminder()">Create Reminder</button>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12 col-xl-6">
+                                    <div class="bg-secondary text-center rounded p-5">
+                                        <h4>Get All Reminders</h4>
+                                        <button class="btn btn-primary" onclick="getAllReminders()">Get All Reminders</button>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12 col-xl-6">
+                                    <div class="bg-secondary text-center rounded p-5">
+                                        <h4>Update Reminder</h4>
+                                        <input type="text" id="updateReminderIdInput" class="form-control mb-2" placeholder="Enter Reminder ID">
+                                        <button class="btn btn-primary" onclick="updateReminder()">Update Reminder</button>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12 col-xl-6">
+                                    <div class="bg-secondary text-center rounded p-5">
+                                        <h4>Delete Reminder</h4>
+                                        <input type="text" id="deleteReminderIdInput" class="form-control mb-2" placeholder="Enter Reminder ID">
+                                        <button class="btn btn-primary" onclick="deleteReminder()">Delete Reminder</button>
+                                    </div>
+                                </div>
+
+                                <!-- <div class="col-sm-12 col-xl-6">
+                                    <div class="bg-secondary text-center rounded p-5">
+                                        <h4>Get Reminder by ID</h4>
+                                        <input type="text" id="reminderIdInput" class="form-control mb-2" placeholder="Enter Reminder ID">
+                                        <button class="btn btn-info" onclick="getReminderById()">Get Reminder by ID</button>
+                                    </div>
+                                </div> -->
+                                
+                            </div>
                         </div>
         
-                        <!-- Get All Reminders -->
-                        <div id="getAllReminders" class="my-4">
-                            <h4>Get All Reminders</h4>
-                            <button class="btn btn-success" onclick="getAllReminders()">Get All Reminders</button>
-                        </div>
-        
-                
-                        <!-- Get Reminder by ID -->
-                        <!-- <div id="getReminderById" class="my-4">
-                            <h4>Get Reminder by ID</h4>
-                            <input type="text" id="reminderIdInput" class="form-control mb-2" placeholder="Enter Reminder ID">
-                            <button class="btn btn-info" onclick="getReminderById()">Get Reminder by ID</button>
-                        </div> -->
-        
-                        <!-- Update Reminder -->
-                        <div id="updateReminder" class="my-4">
-                            <h4>Update Reminder</h4>
-                            <input type="text" id="updateReminderIdInput" class="form-control mb-2" placeholder="Enter Reminder ID">
-                            <button class="btn btn-warning" onclick="updateReminder()">Update Reminder</button>
-                        </div>
-        
-                        <!-- Delete Reminder -->
-                        <div id="deleteReminder" class="my-4">
-                            <h4>Delete Reminder</h4>
-                            <input type="text" id="deleteReminderIdInput" class="form-control mb-2" placeholder="Enter Reminder ID">
-                            <button class="btn btn-danger" onclick="deleteReminder()">Delete Reminder</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
             <!-- Blank End -->
 
+
+            
 
             <!-- Footer Start -->
             <div class="container-fluid pt-4 px-4">
