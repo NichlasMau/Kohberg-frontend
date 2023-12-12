@@ -224,14 +224,16 @@ function openMyProfileModal() {
   modal.style.display = 'block';
 }
 
-// Create an instance of YourClassName with the updated API base URL
-const yourInstance = new YourClassName('http://localhost:8080');
-
-yourInstance.updateSalesperson(salespersonIDToUpdate, updatedSalespersonData);
-
 
 function closeMyProfileModal() {
   const modal = document.getElementById('myProfileModal');
   modal.style.display = 'none';
 }
+
+
+// Create an instance of YourClassName with the updated API base URL
+const yourInstance = new YourClassName('http://localhost:8080');
+
+yourInstance.updateSalesperson(salespersonIDToUpdate, updatedSalespersonData);
+
 
