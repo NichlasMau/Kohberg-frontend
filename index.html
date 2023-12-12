@@ -146,15 +146,13 @@
                         </a>
                         <div class="dropdown-menu dropdown-menu-end bg-secondary border-0 rounded-0 rounded-bottom m-0">
                             <a href="#" class="dropdown-item" onclick="openMyProfileModal()">My Profile</a>
-                            <a href="#" class="dropdown-item">Settings</a>
-                            <a href="#" class="dropdown-item">Log Out</a>
-                        </div>
+                        <a href="#" class="dropdown-item">Settings</a>
+                        <a href="#" class="dropdown-item">Log Out</a>
                     </div>
                 </div>
-            </nav>
-            <!-- Navbar End -->
-
-            
+            </div>
+        </nav>
+        <!-- Navbar End -->
 
             <!-- Modal for opret kunde formular -->
             <div id="createCustomerModal" class="modal">
@@ -204,22 +202,22 @@
                 </div>
             </div>
 
-            <!-- Modal for My Profile -->
-            <div id="myProfileModal" class="modal">
-                <div class="modal-content">
-                    <span class="close" onclick="closeMyProfileModal()">&times;</span>
-                    <!-- Add your profile content here -->
-                    <h2>User Profile</h2>
-                    <p>Name: John Doe</p>
-                    <p>Email: john.doe@example.com</p>
-                    <p>Role: Admin</p>
-                    <!-- Add more information as needed -->
+                <!-- Modal for My Profile -->
+                <div id="myProfileModal" class="modal">
+                    <div class="modal-content">
+                        <span class="close" onclick="closeMyProfileModal()">&times;</span>
+                        <!-- Add your profile content here -->
+                        <h3>User Profile</h3>
+                        <p>Name: John Doe</p>
+                        <p>Email: john.doe@example.com</p>
+                        <p>Role: Admin</p>
+                        <!-- Add more information as needed -->
 
-                    <button id="closeProfilePopup" onclick="closeMyProfileModal()">Close</button>
+                        <button id="closeProfilePopup" onclick="closeMyProfileModal()">Close</button>
+                    </div>
                 </div>
-            </div>
-
-            </nav>
+                     
+</nav>
 
             <div class="navbar-nav align-items-center ms-auto">
                 <div class="nav-item dropdown">
@@ -307,74 +305,74 @@
             <!-- Sale & Revenue Start -->
             <div class="container-fluid pt-4 px-4">
                 <div class="row g-4">
-                    <div class="col-sm-6 col-xl-3">
-                        <div class="bg-secondary rounded d-flex align-items-center justify-content-between p-4">
-                            <i class="fa fa-chart-line fa-3x text-primary"></i>
-                            <div class="ms-3">
-                                <p class="mb-2">Today Total</p>
-                                <h6 class="mb-0">1234 KR.</h6>
-                            </div>
-                        </div>
+                <div class="col-sm-6 col-xl-3">
+                    <div class="bg-secondary rounded d-flex align-items-center justify-content-between p-4">
+                    <i class="fa fa-chart-line fa-3x text-primary"></i>
+                    <div class="ms-3">
+                        <p class="mb-2">Today Total</p>
+                        <h6 id="todayTotal" class="mb-0"></h6>
                     </div>
-                    <div class="col-sm-6 col-xl-3">
-                        <div class="bg-secondary rounded d-flex align-items-center justify-content-between p-4">
-                            <i class="fa fa-chart-bar fa-3x text-primary"></i>
-                            <div class="ms-3">
-                                <p class="mb-2">Week Total</p>
-                                <h6 class="mb-0">1234 KR.</h6>
-                            </div>
-                        </div>
                     </div>
-                    <div class="col-sm-6 col-xl-3">
-                        <div class="bg-secondary rounded d-flex align-items-center justify-content-between p-4">
-                            <i class="fa fa-chart-area fa-3x text-primary"></i>
-                            <div class="ms-3">
-                                <p class="mb-2">Month Total</p>
-                                <h6 class="mb-0">1234 KR.</h6>
-                            </div>
-                        </div>
+                </div>
+                <!-- Repeat the pattern for other elements -->
+                <div class="col-sm-6 col-xl-3">
+                    <div class="bg-secondary rounded d-flex align-items-center justify-content-between p-4">
+                    <i class="fa fa-chart-bar fa-3x text-primary"></i>
+                    <div class="ms-3">
+                        <p class="mb-2">Week Total</p>
+                        <h6 id="weekTotal" class="mb-0"></h6>
                     </div>
-                    <div class="col-sm-6 col-xl-3">
-                        <div class="bg-secondary rounded d-flex align-items-center justify-content-between p-4">
-                            <i class="fa fa-chart-pie fa-3x text-primary"></i>
-                            <div class="ms-3">
-                                <p class="mb-2">Total Sale</p>
-                                <h6 class="mb-0">27 STK.</h6>
-                            </div>
-                        </div>
                     </div>
+                </div>
+                <div class="col-sm-6 col-xl-3">
+                    <div class="bg-secondary rounded d-flex align-items-center justify-content-between p-4">
+                    <i class="fa fa-chart-area fa-3x text-primary"></i>
+                    <div class="ms-3">
+                        <p class="mb-2">Month Total</p>
+                        <h6 id="monthTotal" class="mb-0"></h6>
+                    </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-xl-3">
+                    <div class="bg-secondary rounded d-flex align-items-center justify-content-between p-4">
+                    <i class="fa fa-chart-pie fa-3x text-primary"></i>
+                    <div class="ms-3">
+                        <p class="mb-2">Total Sale</p>
+                        <h6 id="totalSale" class="mb-0"></h6>
+                    </div>
+                    </div>
+                </div>
                 </div>
             </div>
             <!-- Sale & Revenue End -->
-
-
+            
             <!-- Sales Chart Start -->
             <div class="container-fluid pt-4 px-4">
                 <div class="row g-4">
-                    <div class="col-sm-12 col-xl-6">
-                        <div class="bg-secondary text-center rounded p-4">
-                            <div class="d-flex align-items-center justify-content-between mb-4">
-                                <h6 class="mb-0">Worldwide Sales</h6>
-                                <a href="">Show All</a>
-                            </div>
-                            <canvas id="worldwide-sales"></canvas>
-                        </div>
+                <div class="col-sm-12 col-xl-6">
+                    <div class="bg-secondary text-center rounded p-4">
+                    <div class="d-flex align-items-center justify-content-between mb-4">
+                        <h6 class="mb-0">Sales & Revenue - Whole Region</h6>
+                        <a href="">Show All</a>
                     </div>
-                    <div class="col-sm-12 col-xl-6">
-                        <div class="bg-secondary text-center rounded p-4">
-                            <div class="d-flex align-items-center justify-content-between mb-4">
-                                <h6 class="mb-0">Salse & Revenue</h6>
-                                <a href="">Show All</a>
-                            </div>
-                            <canvas id="salse-revenue"></canvas>
-                        </div>
+                    <canvas id="worldwide-sales"></canvas>
                     </div>
+                </div>
+                <div class="col-sm-12 col-xl-6">
+                    <div class="bg-secondary text-center rounded p-4">
+                    <div class="d-flex align-items-center justify-content-between mb-4">
+                        <h6 class="mb-0">Sales & Revenue - Whole DK</h6>
+                        <a href="">Show All</a>
+                    </div>
+                    <canvas id="salse-revenue"></canvas>
+                    </div>
+                </div>
                 </div>
             </div>
             <!-- Sales Chart End -->
+  
 
-
-            <!-- Recent Sales Start -->
+           <!-- Recent Sales Start -->
             <div class="container-fluid pt-4 px-4">
                 <div class="bg-secondary text-center rounded p-4">
                     <div class="d-flex align-items-center justify-content-between mb-4">
@@ -614,6 +612,7 @@
     <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
     <script src="js/reminderService.js"></script>
     <script src="js/customer.js"></script>
+    <script src="js/sale.js"></script>
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
