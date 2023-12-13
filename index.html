@@ -160,27 +160,6 @@
 
             <!-- Modal for opret kunde formular -->
             <div id="createCustomerModal" class="modal">
-                <!-- <div class="modal-content">
-                    <span class="close" onclick="yourInstance.hideCreateCustomerForm()">&times;</span>
-                    <form id="customerForm">
-                        <h2>Create Customer</h2>
-
-                        <label for="name">Name:</label>
-                        <input type="text" id="name" name="name" required>
-
-                        <label for="role">Role:</label>
-                        <input type="hidden" id="role" name="role" value="customer">
-                        <p>Customer</p>
-
-                        <label for="birthday">Birthday:</label>
-                        <input type="date" id="birthday" name="birthday">
-
-                        <label for="email">Email:</label>
-                        <input type="email" id="email" name="email" required>
-
-                        <button type="button" onclick="yourInstance.createCustomer()">Add Customer</button>
-                    </form>
-                </div> -->
                 <div class="wrapper fadeInDown">
                     <div id="formContent">
                         <span class="close" onclick="yourInstance.hideCreateCustomerForm()">&times;</span>
@@ -332,7 +311,7 @@
             <!-- Navbar End -->
 
 
-            <!-- Sale & Revenue Start -->
+                        <!-- Sale & Revenue Start -->
             <div class="container-fluid pt-4 px-4">
                 <div class="row g-4">
                     <div class="col-sm-6 col-xl-3">
@@ -367,7 +346,7 @@
                         <div class="bg-secondary rounded d-flex align-items-center justify-content-between p-4">
                             <i class="fa fa-chart-pie fa-3x text-primary"></i>
                             <div class="ms-3">
-                                <p class="mb-2">Total Sale</p>
+                                <p class="mb-2">Year Total</p>
                                 <h6 id="totalSale" class="mb-0"></h6>
                             </div>
                         </div>
@@ -402,7 +381,7 @@
             <!-- Sales Chart End -->
 
 
-            <!-- Recent Sales Start -->
+                        <!-- Recent Sales Start -->
             <div class="container-fluid pt-4 px-4">
                 <div class="bg-secondary text-center rounded p-4">
                     <div class="d-flex align-items-center justify-content-between mb-4">
@@ -410,71 +389,27 @@
                         <a href="">Show All</a>
                     </div>
                     <div class="table-responsive">
-                        <table id="recent-sales-table"
-                            class="table text-start align-middle table-bordered table-hover mb-0">
+                        <table id="recent-sales-table" class="table text-start align-middle table-bordered table-hover mb-0">
                             <thead>
                                 <tr class="text-white">
                                     <th scope="col"><input class="form-check-input" type="checkbox"></th>
-                                    <th scope="col">Date</th>
+                                    <th scope="col">Butik</th>
                                     <th scope="col">Invoice</th>
-                                    <th scope="col">Customer</th>
-                                    <th scope="col">Amount</th>
+                                    <th scope="col">Salgskonsulent</th>
+                                    <th scope="col">Salg stk.</th>
                                     <th scope="col">Status</th>
                                     <th scope="col">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td><input class="form-check-input" type="checkbox"></td>
-                                    <td>01 Jan 2045</td>
-                                    <td>INV-0123</td>
-                                    <td>Jhon Doe</td>
-                                    <td>$123</td>
-                                    <td>Paid</td>
-                                    <td><a class="btn btn-sm btn-primary" href="">Detail</a></td>
-                                </tr>
-                                <tr>
-                                    <td><input class="form-check-input" type="checkbox"></td>
-                                    <td>01 Jan 2045</td>
-                                    <td>INV-0123</td>
-                                    <td>Jhon Doe</td>
-                                    <td>$123</td>
-                                    <td>Paid</td>
-                                    <td><a class="btn btn-sm btn-primary" href="">Detail</a></td>
-                                </tr>
-                                <tr>
-                                    <td><input class="form-check-input" type="checkbox"></td>
-                                    <td>01 Jan 2045</td>
-                                    <td>INV-0123</td>
-                                    <td>Jhon Doe</td>
-                                    <td>$123</td>
-                                    <td>Paid</td>
-                                    <td><a class="btn btn-sm btn-primary" href="">Detail</a></td>
-                                </tr>
-                                <tr>
-                                    <td><input class="form-check-input" type="checkbox"></td>
-                                    <td>01 Jan 2045</td>
-                                    <td>INV-0123</td>
-                                    <td>Jhon Doe</td>
-                                    <td>$123</td>
-                                    <td>Paid</td>
-                                    <td><a class="btn btn-sm btn-primary" href="">Detail</a></td>
-                                </tr>
-                                <tr>
-                                    <td><input class="form-check-input" type="checkbox"></td>
-                                    <td>01 Jan 2045</td>
-                                    <td>INV-0123</td>
-                                    <td>Jhon Doe</td>
-                                    <td>$123</td>
-                                    <td>Paid</td>
-                                    <td><a class="btn btn-sm btn-primary" href="">Detail</a></td>
-                                </tr>
+                               
                             </tbody>
                         </table>
                     </div>
                 </div>
             </div>
             <!-- Recent Sales End -->
+
 
 
             <!-- Widgets Start -->

@@ -7,8 +7,8 @@
     <list default="true" id="a78268ef-46ad-4fd0-b18d-a93ad30c2e47" name="Changes" comment="Frontend added to Azure">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/customer.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/customer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/sale.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/sale.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,13 +34,16 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;JavaScript Debug.index.html.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -70,7 +73,12 @@
       <workItem from="1701689598382" duration="1794000" />
       <workItem from="1701779894720" duration="433000" />
       <workItem from="1702201806222" duration="602000" />
-      <workItem from="1702291327263" duration="593000" />
+      <workItem from="1702291327263" duration="1180000" />
+      <workItem from="1702415868413" duration="323000" />
+      <workItem from="1702416845857" duration="4000" />
+      <workItem from="1702453861601" duration="422000" />
+      <workItem from="1702454461015" duration="666000" />
+      <workItem from="1702460103623" duration="706000" />
     </task>
     <task id="LOCAL-00001" summary="Frontend added to Azure">
       <option name="closed" value="true" />

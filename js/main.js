@@ -165,20 +165,40 @@ function updateSalseRevenueChart(data) {
 
 // Funktion til at beregne den månedlige total for en specifik region
 function calculateMonthlyTotal(data, region) {
-    return [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map(month => {
-      // Filtrer salgsdata for den givne region og måned
-      var filteredData = data.sales.filter(sale => {
-        var saleDate = new Date(sale.date);
-        return sale.region === region && saleDate.getMonth() + 1 === month;
+    try {
+      // Tjek om data og data.sales er defineret
+      if (!data || !data.sales || !Array.isArray(data.sales)) {
+        throw new Error('Fejl: Ugyldige eller manglende salgsdata.');
+      }
+  
+      return [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map(month => {
+        try {
+          // Filtrer salgsdata for den givne region og måned
+          var filteredData = data.sales.filter(sale => {
+            // Tjek om nødvendige felter er defineret
+            if (!sale.date || !sale.region) {
+              throw new Error('Fejl: Nødvendige felter mangler i salgsdata.');
+            }
+  
+            var saleDate = new Date(sale.date);
+            return sale.region === region && saleDate.getMonth() + 1 === month;
+          });
+  
+          console.log(`Month: ${month}, Region: ${region}, Data:`, filteredData);
+  
+          // Beregn den samlede mængde for den givne måned og region
+          var monthlyTotal = filteredData.reduce((total, sale) => total + sale.amountDKK, 0);
+  
+          return monthlyTotal;
+        } catch (error) {
+          console.error(error.message);
+          return null;
+        }
       });
-  
-      console.log(`Month: ${month}, Region: ${region}, Data:`, filteredData);
-  
-      // Beregn den samlede mængde for den givne måned og region
-      var monthlyTotal = filteredData.reduce((total, sale) => total + sale.amountDKK, 0);
-  
-      return monthlyTotal;
-    });
+    } catch (error) {
+      console.error(error.message);
+      return Array(12).fill(null); // Returnér et array med null-værdier i tilfælde af fejl
+    }
   }
   
 
