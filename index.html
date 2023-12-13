@@ -146,9 +146,15 @@
                         </a>
                         <div class="dropdown-menu dropdown-menu-end bg-secondary border-0 rounded-0 rounded-bottom m-0">
                             <a href="#" class="dropdown-item" onclick="openMyProfileModal()">My Profile</a>
+
+                            <!-- Add more profile options as needed -->
+                        <a href="#" class="dropdown-item">Settings</a>
+                        <a id="logout" class="dropdown-item">Log Out</a>
+
                             <a href="#" class="dropdown-item">Settings</a>
                             <a href="#" class="dropdown-item">Log Out</a>
                         </div>
+
                     </div>
                 </div>
             </nav>
@@ -306,12 +312,21 @@
                         <hr class="dropdown-divider">
                         <a href="#" class="dropdown-item text-center">See all notifications</a>
                     </div>
+
+                    <div class="nav-item dropdown">
+                        <div class="dropdown-menu dropdown-menu-end bg-secondary border-0 rounded-0 rounded-bottom m-0">
+                            <a href="#" class="dropdown-item">My Profile</a>
+                            <a href="#" class="dropdown-item">Settings</a>
+                            <a id="logout" class="dropdown-item">Log Out</a>
+                        </div>
+
                 </div>
                 <div class="nav-item dropdown">
                     <div class="dropdown-menu dropdown-menu-end bg-secondary border-0 rounded-0 rounded-bottom m-0">
                         <a href="#" class="dropdown-item">My Profile</a>
                         <a href="#" class="dropdown-item">Settings</a>
                         <a href="#" class="dropdown-item">Log Out</a>
+
                     </div>
                 </div>
 
@@ -636,6 +651,7 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+<script src="js/tokenCheck.js"></script>
 </body>
 
 </html>
