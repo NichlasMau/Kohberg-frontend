@@ -225,6 +225,8 @@ Promise.all(promises)
   })
   .catch(error => console.error('Fejl ved beregning af årssum:', error));
 
+
+  
   // Kald funktionen for hvert id
   updateLabelFromId("todayTotal");
   updateLabelFromId("weekTotal");
