@@ -1,7 +1,3 @@
-function getToken(){
-  const localstorage_user = JSON.parse(localStorage.getItem('user'))
-  return  localstorage_user.token
-}
 
 class YourClassName {
   constructor(apiBaseUrl) {
@@ -13,14 +9,24 @@ class YourClassName {
     this.addCustomerLink();
   }
 
-
-
- 
   async createCustomer() {
     try {
-      const customerForm = document.getElementById('customerForm');
-      const formData = new FormData(customerForm);
-  
+      // Hent formelementet fra DOM
+    const customerForm = document.getElementById('customerForm');
+
+    function getToken(){
+      const localstorage_user = JSON.parse(localStorage.getItem('user'))
+      return  localstorage_user.token
+    }
+    
+
+    // Opret FormData-objekt med formdata
+    const formData = new FormData(customerForm);
+
+     // Log token og autorisationsheader
+     console.log('Token:', getToken());
+     console.log('Authorization Header:', 'Bearer ' + getToken());
+
       // Hent fødselsdag fra formdata
       const birthday = formData.get('birthday');
       // Split og vend om på datoformatet
@@ -34,12 +40,11 @@ class YourClassName {
       console.log('Birthday:', finalFormattedBirthday);
       console.log('Email:', formData.get('email'));
   
-      const requestBody = JSON.stringify({
+      const requestBody = {
         name: formData.get('name'),
-        role: formData.get('role'),
+        role: 'Customer',
         birthday: finalFormattedBirthday,
-        email: formData.get('email'),
-      });
+        email: formData.get('email')};
   
       console.log('Request Body:', requestBody);
   
@@ -49,30 +54,22 @@ class YourClassName {
           'Content-Type': 'application/json',
           'Authorization': 'Bearer ' + getToken()
         },
-        body: requestBody,
+        body: JSON.stringify(requestBody),
       });
+
+      const isJson = res.headers.get('content-type')?.includes('application/json');
+      const responseBody = isJson ? await res.json() : res.statusText;
+      
   
-      if (res.status >= 400) {
-        const error = await res.json();
-        throw new Error(`Error ${res.status}: ${error.message}`);
+      if (res.status === 401) {
+        throw new Error('Unauthorized: Check your token and authorization header');
       }
-  
-      const responseBody = await res.json();
+      
       console.log('Customer created:', responseBody);
       this.hideCreateCustomerForm();
     }catch (err) {
-        console.error('Error creating customer:', err.message);
-        console.log('Request data:', {
-          name: formData.get('name'),
-          role: formData.get('role'),
-          birthday: formattedBirthday,
-          email: formData.get('email'),
-        });
       }
-      
   }
-  
-  
 
   showCreateCustomerForm = () => {
     const modal = document.getElementById('createCustomerModal');
@@ -84,46 +81,8 @@ class YourClassName {
     modal.style.display = 'none';
   }
 
-  createCustomer = () => {
-    // Hent formelementet fra DOM
-    const customerForm = document.getElementById('customerForm');
-  
-    // Opret FormData-objekt med formdata
-    const formData = new FormData(customerForm);
-  
-    // Opret dataobjekt med formdata
-    const requestData = {
-      customerID: Math.floor(Math.random() * 1000) + 1,
-      name: formData.get('name'),
-      role: formData.get('role'),
-      birthday: formData.get('birthday'),
-      email: formData.get('email'),
-      creationYear: new Date().toISOString().split('T')[0],
-      leader: null,
-      salesperson: null
-    };
-  
-    fetch(`${this.apiBaseUrl}/customer/create`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': 'Bearer ' + getToken()
-      },
-      body: JSON.stringify(requestData),
-    })
-      .then(response => response.json())
-      .then(data => {
-        console.log('Customer created:', data);
-        this.hideCreateCustomerForm();
-      })
-      .catch(error => {
-        console.error('Error creating customer:', error);
-  
-        // Log anmodningens data
-        console.log('Request data:', requestData);
-      });
-  }
-  
+ 
+ /* 
   async updateSalesperson(salespersonID, updatedData) {
     try {
       // Fetch the existing salesperson data
@@ -188,7 +147,7 @@ class YourClassName {
     const res = await fetch(`${this.apiBaseUrl}/salesperson/update/${salespersonID}`);
     const salesperson = await res.json();
     return salesperson;
-  }
+  }*/
 
   formatDate(dateString) {
     return dateString;
@@ -224,6 +183,7 @@ const updatedSalespersonData = {
 };
 
 
+
 // Listen for DOMContentLoaded event
 document.addEventListener('DOMContentLoaded', () => {
   yourInstance.domContentLoaded();
@@ -244,6 +204,6 @@ function closeMyProfileModal() {
 // Create an instance of YourClassName with the updated API base URL
 const yourInstance = new YourClassName('https://kohberg-backend.azurewebsites.net');
 
-yourInstance.updateSalesperson(salespersonIDToUpdate, updatedSalespersonData);
+/*yourInstance.updateSalesperson(salespersonIDToUpdate, updatedSalespersonData);*/
 
 

@@ -336,5 +336,3 @@ async function fetchSalesData() {
 
   // Call the function to initially populate the table
   updateRecentSalesTable();
-
- 

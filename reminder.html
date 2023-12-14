@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Kohberg - Dashboard</title>
+    <title>Kohberg - Reminder</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -62,6 +62,7 @@
                 <div class="navbar-nav w-100">
                     <a href="index.html" class="nav-item nav-link"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
                     <a href="reminder.html" class="nav-item nav-link active"><i class="fa fa-duotone fa-bell me-2"></i>Reminders</a>
+                    <a href="sales.html" class="nav-item nav-link"><i class="fa fa-solid fa-receipt me-2"></i>Sales</a>
                     <a href="#" class="nav-item nav-link"><i class="fa fa-solid fa-users me-2"></i>Customers</a>
                     <a href="products.html" class="nav-item nav-link"><i class="fa fa-solid fa-box-open me-2"></i>Products</a>
                 </div>
@@ -125,7 +126,6 @@
 
 
             <!-- Blank Start -->    
-
             <div class="container-fluid">
                 <div class="row vh-100 bg-grey rounded align-items-center justify-content-center">
                     <div class="col-md-12 text-center text-light" id="reminderSection">
@@ -176,9 +176,6 @@
         
             <!-- Blank End -->
 
-
-            
-
             <!-- Footer Start -->
             <div class="container-fluid pt-4 px-4">
                 <div class="bg-secondary rounded-top p-4">
@@ -206,6 +203,7 @@
 
         <!-- Eventlisterner for reminderService method calls to the backend -->
     <script>
+
        document.addEventListener('DOMContentLoaded', async function () {
     const reminderService = new ReminderService('https://kohberg-backend.azurewebsites.net');
 
@@ -265,6 +263,15 @@
     
 
     // Attach event listener to the form for the submit event
+
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const backendUrl = 'https://kohberg-backend.azurewebsites.net/';
+            // Create an instance of the ReminderService class
+            const reminderService = new ReminderService(backendUrl);
+            // Create an instance of the ReminderComponent class
+            
+        });
 
     </script>
 
