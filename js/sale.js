@@ -259,6 +259,7 @@ function formatNumber(number) {
 }
 
 
+
   const apiToken = 'dzagui0hq3z80kyf1jr40l10apxdweuiybq6zko4';
   const apiEndpoint = 'https://api.json-generator.com/templates/s5vsN1doCVHK/data';
 
