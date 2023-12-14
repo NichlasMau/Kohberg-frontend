@@ -1,5 +1,61 @@
 
-    (function ($) {
+  document.addEventListener('DOMContentLoaded', (event) => {
+    getAllReminders();
+});
+
+async function getAllReminders() {
+
+function getToken(){
+    const localstorage_user = JSON.parse(localStorage.getItem('user'))
+    return  localstorage_user.token
+  }
+  
+
+    const response = await fetch(`https://kohberg-backend.azurewebsites.net/reminder/all`, {
+        method: "GET",
+        headers: {
+            'content-type': 'application/json',
+            'Authorization': 'Bearer ' + getToken()
+        }
+    });
+    const reminders = await response.json();
+
+    const remindersDropdown = document.getElementById('remindersDropdown');
+    remindersDropdown.innerHTML = '';  // Clear existing content
+
+    reminders.forEach((reminder, index) => {
+        const reminderElement = document.createElement('a');
+        reminderElement.href = '#';
+        reminderElement.classList.add('dropdown-item');
+        reminderElement.innerHTML = `
+            <div class="d-flex align-items-center">
+                <div class="ms-2">
+                    <h6 class="fw-normal mb-0">Message: ${reminder.message}</h6>
+                    <small>Date: ${reminder.formattedReminderDate}</small>
+                </div>
+            </div>
+        `;
+        remindersDropdown.appendChild(reminderElement);
+
+        // Add a divider, but not after the last item
+        if (index < reminders.length - 1) {
+            const divider = document.createElement('hr');
+            divider.classList.add('dropdown-divider');
+            remindersDropdown.appendChild(divider);
+        }
+    });
+
+    // Add "See all reminders" link at the bottom
+    const seeAllReminders = document.createElement('a');
+    seeAllReminders.href = '/reminder.html';
+    seeAllReminders.classList.add('dropdown-item', 'text-center');
+    seeAllReminders.textContent = 'See all reminders';
+    remindersDropdown.appendChild(seeAllReminders);
+}
+
+
+
+(function ($) {
     "use strict";
 
     // Spinner

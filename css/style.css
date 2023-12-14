@@ -302,40 +302,38 @@ th {
     padding-top: 5%;
 }
 
-#reminderSection .row {  
+#reminderSection h4 {
+    color: #BCA37F;
 }
 
-#reminderSection .row .my-4 {
-   
+#reminderSection h3 {
+    font-size: 35px;
+}
+
+#reminderSection h4 {
+    font-size: 25px;
 }
 
 
-/* create reminder */
+#reminderForm label,
+#reminderForm input,
+#reminderForm button {
+    display: block; /* Gør hvert element til en blok, så de optager hele linjens bredde */
+    margin: 10px 0; /* Tilføjer en smule margin til bunden af hvert element for afstand */
+}
 
-#createReminder {
+#reminderForm input {    
+    width: 40%; /* Gør input og knap fuld bredde inden for formularen */
+    margin: auto;
+}
+
+#reminderForm button {
+    margin: 20px auto;
     
 }
 
-
-
-/* getAllReminders */
-
-#getAllReminders {
-    
-}
-
-
-/* updateReminder */
-
-#updateReminder {
-    
-}
-
-
-/* deleteReminder */
-
-#deleteReminder {
-    
+#confirmationMessage {
+    color: #BCA37F;
 }
 
 

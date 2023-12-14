@@ -98,10 +98,10 @@
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
                             <i class="fa fa-bell me-lg-2"></i>
-                            <span class="d-none d-lg-inline-flex">Reminder</span>
+                            <span class="d-none d-lg-inline-flex">Reminders</span>
                         </a>
-                        <div class="dropdown-menu dropdown-menu-end bg-secondary border-0 rounded-0 rounded-bottom m-0">
-                            <!-- Your notifications dropdown content -->
+                        <div id="remindersDropdown" class="dropdown-menu dropdown-menu-end bg-secondary border-0 rounded-0 rounded-bottom m-0">
+                            <!-- Reminders will be loaded here -->
                         </div>
                     </div>
 
@@ -132,40 +132,44 @@
                         <h3>Reminders</h3>
                         <div class="container-fluid pt-4 px-4">
                             <div class="row g-4">
-                                <div class="col-sm-12 col-xl-6">
+                                <div class="col-12">
                                     <div class="bg-secondary text-center rounded p-5">
-                                        <h4>Create Reminder</h4>
-                                        <button class="btn btn-primary" onclick="createReminder()">Create Reminder</button>
+                                        <h4>Create Reminder</h4>                                                                                                                        
+                                        <form id="reminderForm">                                            
+                                            <input type="hidden" id="customerID" name="customerID" value="0">                                                            
+                                            
+                                            <label for="reminder_date">Reminder Date:</label>
+                                            <input type="date" id="reminderDate" name="reminderDate" required>
+                                            
+                                            <label for="Message">Message:</label>
+                                            <input type="text" id="Message" name="Message" required>     
+                                            <button class="btn btn-primary" type="submit">Create Reminder</button>                                                   
+                                        </form>   
+                                        <div id="confirmationMessage" style="display:none;"></div>                                                                                                            
                                     </div>
                                 </div>
-                                <div class="col-sm-12 col-xl-6">
-                                    <div class="bg-secondary text-center rounded p-5">
-                                        <h4>Get All Reminders</h4>
-                                        <button class="btn btn-primary" onclick="getAllReminders()">Get All Reminders</button>
+                                
+                                <div class="container" style="padding-top: 1rem;">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="bg-secondary rounded h-100 p-4">
+                                                <h4 class="mb-4">All Reminders</h4>
+                                                <div class="table-responsive">
+                                                    <table class="table">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>Date</th>
+                                                                <th>Message</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody id="reminderTablebODY">
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="col-sm-12 col-xl-6">
-                                    <div class="bg-secondary text-center rounded p-5">
-                                        <h4>Update Reminder</h4>
-                                        <input type="text" id="updateReminderIdInput" class="form-control mb-2" placeholder="Enter Reminder ID">
-                                        <button class="btn btn-primary" onclick="updateReminder()">Update Reminder</button>
-                                    </div>
-                                </div>
-                                <div class="col-sm-12 col-xl-6">
-                                    <div class="bg-secondary text-center rounded p-5">
-                                        <h4>Delete Reminder</h4>
-                                        <input type="text" id="deleteReminderIdInput" class="form-control mb-2" placeholder="Enter Reminder ID">
-                                        <button class="btn btn-primary" onclick="deleteReminder()">Delete Reminder</button>
-                                    </div>
-                                </div>
-
-                                <!-- <div class="col-sm-12 col-xl-6">
-                                    <div class="bg-secondary text-center rounded p-5">
-                                        <h4>Get Reminder by ID</h4>
-                                        <input type="text" id="reminderIdInput" class="form-control mb-2" placeholder="Enter Reminder ID">
-                                        <button class="btn btn-info" onclick="getReminderById()">Get Reminder by ID</button>
-                                    </div>
-                                </div> -->
                                 
                             </div>
                         </div>
@@ -199,6 +203,68 @@
 
         <!-- Eventlisterner for reminderService method calls to the backend -->
     <script>
+
+       document.addEventListener('DOMContentLoaded', async function () {
+    const reminderService = new ReminderService('https://kohberg-backend.azurewebsites.net');
+
+    // Function to create a reminder
+    async function createReminder(event) {
+        event.preventDefault(); // Prevent the default form submit behavior
+
+        const reminderData = {
+            customerID: document.getElementById('customerID').value,
+            reminderDate: document.getElementById('reminderDate').value,
+            message: document.getElementById('Message').value
+        };
+
+        try {
+            const newReminder = await reminderService.createReminder(reminderData);
+            console.log('Reminder Created:', newReminder);
+            // Further actions like updating the UI
+        } catch (error) {
+            console.error('Error creating reminder:', error);
+            // Handle errors, possibly show a message to the user
+        }
+    }
+
+    // Function to populate the reminders table
+    async function populateRemindersTable() {
+        try {
+            const remindersData = await reminderService.getAllReminders();
+            const reminderTableBody = document.getElementById("reminderTablebODY");
+
+            // Clear existing table rows
+            reminderTableBody.innerHTML = "";
+
+            // Iterate through the reminders data and populate the table
+            remindersData.forEach(reminder => {
+                const row = document.createElement("tr");
+                const dateCell = document.createElement("td");
+                const messageCell = document.createElement("td");
+
+                dateCell.textContent = reminder.formattedReminderDate;
+                messageCell.textContent = reminder.message;
+
+                row.appendChild(dateCell);
+                row.appendChild(messageCell);
+                reminderTableBody.appendChild(row);
+            });
+        } catch (error) {
+            console.error("Error fetching reminders:", error);
+        }
+    }
+
+    // Call the function to populate the table when the DOM content is loaded
+    populateRemindersTable();
+    document.getElementById('reminderForm').addEventListener('submit', createReminder);
+
+});
+
+    
+
+    // Attach event listener to the form for the submit event
+
+
         document.addEventListener('DOMContentLoaded', function () {
             const backendUrl = 'https://kohberg-backend.azurewebsites.net/';
             // Create an instance of the ReminderService class
@@ -206,6 +272,7 @@
             // Create an instance of the ReminderComponent class
             
         });
+
     </script>
 
 
