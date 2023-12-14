@@ -226,10 +226,90 @@ Promise.all(promises)
   .catch(error => console.error('Fejl ved beregning af årssum:', error));
 
 
-  
+
   // Kald funktionen for hvert id
   updateLabelFromId("todayTotal");
   updateLabelFromId("weekTotal");
   updateLabelFromId("monthTotal");
   updateLabelFromId("totalSale");
 
+
+  const apiToken = 'dzagui0hq3z80kyf1jr40l10apxdweuiybq6zko4';
+  const apiEndpoint = 'https://api.json-generator.com/templates/s5vsN1doCVHK/data';
+
+  // Fetch sales data from the API
+async function fetchSalesData() {
+    try {
+      const response = await fetch(apiEndpoint, {
+        headers: {
+          Authorization: `Bearer ${apiToken}`,
+          'Content-Type': 'application/json',
+        },
+      });
+
+      if (!response.ok) {
+        throw new Error(`Failed to fetch sales data: ${response.status}`);
+      }
+
+      const data = await response.json();
+      console.log('API Response:', data);
+      return data.sales;
+    } catch (error) {
+      console.error('Error fetching sales data:', error.message);
+      throw error;
+    }
+  }
+
+    // Function to fetch data from the API and update the table
+    async function updateRecentSalesTable() {
+      try {
+        const salesData = await fetchSalesData();
+        // Call a function to update the table with the received data
+        populateTable(salesData);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    }
+  // Function to populate the HTML table with data
+  function populateTable(data) {
+    const tableBody = document.querySelector('#recent-sales-table tbody');
+
+    // Clear existing rows
+    tableBody.innerHTML = '';
+
+    // Function to format date as "DD MMM YYYY"
+    const formatDate = (inputDate) => {
+      const options = { year: 'numeric', month: 'short', day: 'numeric' };
+      return new Date(inputDate).toLocaleDateString('en-US', options);
+    };
+
+    // Loop through the data and create a row for each entry
+    data.forEach((sale, index) => {
+      // Generate a unique invoice code (you can customize this logic)
+      const invoiceCode = `INV-${index + 1}`;
+
+      // Assuming status and action are hardcoded
+      const status = 'Paid';
+      const action = '<a class="btn btn-sm btn-primary" href="">Detail</a>';
+
+      const row = document.createElement('tr');
+      row.innerHTML = `
+              <td><input class="form-check-input" type="checkbox"></td>
+              <td>${formatDate(sale.date)}</td>
+              <td>${invoiceCode}</td>
+              <td>${sale.customer}</td>
+              <td>${sale.amountDKK}</td>
+              <td>${status}</td>
+              <td>${action}</td>
+          `;
+
+      tableBody.appendChild(row);
+    });
+  }
+
+
+
+  // Call the function to initially populate the table
+  updateRecentSalesTable();
+
+ 

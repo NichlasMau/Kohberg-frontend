@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="a78268ef-46ad-4fd0-b18d-a93ad30c2e47" name="Changes" comment="Frontend added to Azure">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/sale.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/sale.js" afterDir="false" />
     </list>
