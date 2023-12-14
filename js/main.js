@@ -65,7 +65,6 @@
     Chart.defaults.borderColor = "#000000";
 
  // Token and API fetch
- 
 const apiToken = 'dzagui0hq3z80kyf1jr40l10apxdweuiybq6zko4';
 const apiEndpoint = 'https://api.json-generator.com/templates/s5vsN1doCVHK/data';
 
@@ -84,7 +83,7 @@ const apiEndpoint = 'https://api.json-generator.com/templates/s5vsN1doCVHK/data'
 
  function updateChartsWithData(data) {
      updateWorldwideSalesChart(data);
-     updateSalseRevenueChart(data);
+     updateSalesRevenueChart(data);
      // Add other chart updates if needed
  }
 
@@ -124,17 +123,26 @@ function updateWorldwideSalesChart(data) {
     },
   });
 }
+
+
 // Function to update the Sales & Revenue Chart for all regions combined
-function updateSalseRevenueChart(data) {
+function updateSalesRevenueChart(data) {
     var ctx2 = $("#salse-revenue").get(0).getContext("2d");
   
     // Extracting sales and revenue data for all regions
     const allRegionsData = data.sales;
+
+    // Calculate the total sales for all regions for each month
+    const totalSales = calculateTotalSalesForAllRegions(data);
   
     // Extracting sales and revenue values for all regions
-    const allRegionsSales = allRegionsData.map(item => item.amountDKK);
-    const allRegionsRevenue = allRegionsData.map(item => item.amountDKK * 1.5); // Example: assuming revenue is 1.5 times the sales amount
+    const allRegionsRevenue = totalSales.map(total => total * 1.5); // Example: assuming revenue is 1.5 times the sales amount
   
+    // Log the extracted data to the console
+    console.log('All Regions Data:', allRegionsData);
+    console.log('All Regions Sales:', totalSales);
+    console.log('All Regions Revenue:', allRegionsRevenue);
+
     var myChart2 = new Chart(ctx2, {
       type: "line",
       data: {
@@ -142,7 +150,7 @@ function updateSalseRevenueChart(data) {
         datasets: [
           {
             label: "All Regions Sales",
-            data: allRegionsSales,
+            data: totalSales,
             backgroundColor: "rgba(207, 183, 149, .7)",
             borderColor: "rgba(207, 183, 149)",
             fill: true,
@@ -160,8 +168,24 @@ function updateSalseRevenueChart(data) {
         responsive: true,
       },
     });
-  }
-  
+}
+
+// Function to calculate the total sales for all regions for each month
+function calculateTotalSalesForAllRegions(data) {
+    return [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map(month => {
+        // Filter sales data for the given month
+        var filteredData = data.sales.filter(sale => {
+            var saleDate = new Date(sale.date);
+            return saleDate.getMonth() + 1 === month;
+        });
+
+        // Calculate the total sales for the given month
+        var monthlyTotal = filteredData.reduce((total, sale) => total + sale.amountDKK, 0);
+
+        return monthlyTotal;
+    });
+}
+
 
 // Funktion til at beregne den månedlige total for en specifik region
 function calculateMonthlyTotal(data, region) {
@@ -181,38 +205,6 @@ function calculateMonthlyTotal(data, region) {
     });
   }
   
-
-
-
-    /*// Worldwide Sales Chart
-    var ctx1 = $("#worldwide-sales").get(0).getContext("2d");
-    var myChart1 = new Chart(ctx1, {
-        type: "bar",
-        data: {
-            labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-
-            datasets: [{
-                    label: "Sjælland",
-                    data: [15, 30, 55, 65, 60, 80, 95],
-                    backgroundColor: "rgba(207, 183, 149, .7)"
-                },
-                {
-                    label: "Fyn",
-                    data: [8, 35, 40, 60, 70, 55, 75],
-                    backgroundColor: "rgba(207, 183, 149, .5)"
-                },
-                {
-                    label: "Jylland",
-                    data: [12, 25, 45, 55, 65, 70, 60],
-                    backgroundColor: "rgba(207, 183, 149, .3)"
-                }
-            ]
-            },
-        options: {
-            responsive: true
-        }
-    });*/
-
 
     /*// Salse & Revenue Chart
     var ctx2 = $("#salse-revenue").get(0).getContext("2d");

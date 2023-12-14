@@ -202,36 +202,39 @@ function updateLabelFromId(elementId) {
   }
 }
 
-/// Vent på, at alle promises er færdige
+// Vent på, at alle promises er færdige
 Promise.all(promises)
-.then(results => {
-  // Hent resultaterne fra promises
-  const [dagssum, ugesum, månedsum] = results;
+  .then(results => {
+    // Hent resultaterne fra promises
+    const [dagssum, ugesum, månedsum] = results;
 
-  // Tilføj resultaterne til årssumArray
-  årssumArray = årssumArray.concat(dagssum, ugesum, månedsum);
-  // Opdater HTML-elementerne
-  updateHtmlElement('todayTotal', dagssum[dagssum.length - 1]);
-  updateHtmlElement('weekTotal', ugesum[ugesum.length - 1]);
-  updateHtmlElement('monthTotal', månedsum[månedsum.length - 1]);
-  updateHtmlElement('totalSale', årssumArray[årssumArray.length - 1]); // Brug den sidste værdi i årssumArray som total salg
+    // Tilføj resultaterne til årssumArray
+    årssumArray = årssumArray.concat(dagssum, ugesum, månedsum);
+    // Opdater HTML-elementerne
+    updateHtmlElement('todayTotal', formatNumber(dagssum[dagssum.length - 1]));
+    updateHtmlElement('weekTotal', formatNumber(ugesum[ugesum.length - 1]));
+    updateHtmlElement('monthTotal', formatNumber(månedsum[månedsum.length - 1]));
+    updateHtmlElement('totalSale', formatNumber(årssumArray[årssumArray.length - 1])); // Brug den sidste værdi i årssumArray som total salg
 
-   // Opdater årssummen ved at kalde beregnÅrssum
-   return beregnÅrssum(årssumArray);
+    // Opdater årssummen ved at kalde beregnÅrssum
+    return beregnÅrssum(årssumArray);
   })
   .then(årssum => {
     // Opdater HTML-elementet med årssummen
-    updateHtmlElement('totalSale', årssum);
+    updateHtmlElement('totalSale', formatNumber(årssum));
   })
   .catch(error => console.error('Fejl ved beregning af årssum:', error));
 
+// Kald funktionen for hvert id
+updateLabelFromId("todayTotal");
+updateLabelFromId("weekTotal");
+updateLabelFromId("monthTotal");
+updateLabelFromId("totalSale");
 
-
-  // Kald funktionen for hvert id
-  updateLabelFromId("todayTotal");
-  updateLabelFromId("weekTotal");
-  updateLabelFromId("monthTotal");
-  updateLabelFromId("totalSale");
+// Funktion til at formatere et tal med punktum som tusindtalsseparator
+function formatNumber(number) {
+  return number.toLocaleString('da-DK', { useGrouping: true });
+}
 
 
   const apiToken = 'dzagui0hq3z80kyf1jr40l10apxdweuiybq6zko4';

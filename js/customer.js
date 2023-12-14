@@ -214,6 +214,7 @@ const updatedSalespersonData = {
 };
 
 
+
 // Listen for DOMContentLoaded event
 document.addEventListener('DOMContentLoaded', () => {
   yourInstance.domContentLoaded();
