@@ -134,8 +134,19 @@
                             <div class="row g-4">
                                 <div class="col-sm-12 col-xl-6">
                                     <div class="bg-secondary text-center rounded p-5">
-                                        <h4>Create Reminder</h4>
-                                        <button class="btn btn-primary" onclick="createReminder()">Create Reminder</button>
+                                        <h4>Create Reminder</h4>                                        
+                                        <form id="reminderForm">                                            
+                                            <input type="hidden" id="customerID" name="customerID" value="0">                                                            
+                                            
+                                            <label for="reminder_date">Reminder Date:</label>
+                                            <input type="date" id="reminderDate" name="reminderDate" required>
+                                            
+                                            <label for="Message">Message:</label>
+                                            <input type="text" id="Message" name="Message" required>     
+                                            <button class="btn btn-primary" type="submit">Create Reminder</button>                                                   
+                                        </form>
+                                            
+                                                                   
                                     </div>
                                 </div>
                                 <div class="col-sm-12 col-xl-6">
@@ -203,14 +214,32 @@
         <!-- Eventlisterner for reminderService method calls to the backend -->
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            const backendUrl = 'https://kohberg-backend.azurewebsites.net/';
-            // Create an instance of the ReminderService class
-            const reminderService = new ReminderService(backendUrl);
-            // Create an instance of the ReminderComponent class
-            const reminderComponent = new ReminderComponent(reminderService);
-            // Fetch and render reminders when the page loads
-            reminderComponent.renderReminders();
-        });
+    const reminderService = new ReminderService('https://kohberg-backend.azurewebsites.net');
+
+    // Function to create a reminder
+    async function createReminder(event) {
+        event.preventDefault(); // Prevent the default form submit behavior
+
+        const reminderData = {
+            customerID: document.getElementById('customerID').value,
+            reminderDate: document.getElementById('reminderDate').value,
+            message: document.getElementById('Message').value
+        };
+
+        try {
+            const newReminder = await reminderService.createReminder(reminderData);
+            console.log('Reminder Created:', newReminder);
+            // Further actions like updating the UI
+        } catch (error) {
+            console.error('Error creating reminder:', error);
+            // Handle errors, possibly show a message to the user
+        }
+    }
+
+    // Attach event listener to the form for the submit event
+    document.getElementById('reminderForm').addEventListener('submit', createReminder);
+});
+
     </script>
 
 

@@ -359,3 +359,39 @@ function calculateMonthlyTotal(data, region) {
     
 })(jQuery);
 
+
+function getToken(){
+    const localstorage_user = JSON.parse(localStorage.getItem('user'))
+    return  localstorage_user.token
+  }
+
+document.addEventListener('DOMContentLoaded', (event) => {
+    getAllReminders();
+});
+
+async function getAllReminders() {
+    const response = await fetch(`https://kohberg-backend.azurewebsites.net/reminder/all`, {
+        method: "GET",
+        headers: {
+            'content-type': 'application/json',
+            'Authorization': 'Bearer ' + getToken()
+        }
+    });
+    const reminders = await response.json();
+
+    const remindersContainer = document.getElementById('remindersContainer');
+    remindersContainer.innerHTML = '';
+
+    reminders.forEach(reminder => {
+        const reminderElement = document.createElement('div');
+        reminderElement.classList.add('dropdown-item');
+        reminderElement.innerHTML = `
+            <p><strong>Reminder ID:</strong> ${reminder.reminderID}</p>
+            <p><strong>Customer ID:</strong> ${reminder.customerID}</p>
+            <p><strong>Date:</strong> ${reminder.formattedReminderDate}</p>
+            <p><strong>Message:</strong> ${reminder.message}</p>
+        `;
+        remindersContainer.appendChild(reminderElement);
+    });
+}
+
