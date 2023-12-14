@@ -22,6 +22,14 @@ class ReminderService {
             body: JSON.stringify(reminder),
         });
 
+        if (response.ok) {
+            document.getElementById('confirmationMessage').textContent = 'Reminder created successfully!';
+            document.getElementById('confirmationMessage').style.display = 'block';
+        } else {
+            document.getElementById('confirmationMessage').textContent = 'Error creating reminder.';
+            document.getElementById('confirmationMessage').style.display = 'block';
+        }
+
         return response.json();
     }
 
@@ -33,8 +41,9 @@ class ReminderService {
                 'content-type': 'application/json',
                 'Authorization': 'Bearer ' + getToken()
             }
-        })
+        })        
         return response.json();
+        
     }
 
     // Get a specific reminder by ID

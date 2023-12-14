@@ -97,10 +97,10 @@
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
                             <i class="fa fa-bell me-lg-2"></i>
-                            <span class="d-none d-lg-inline-flex">Reminder</span>
+                            <span class="d-none d-lg-inline-flex">Reminders</span>
                         </a>
-                        <div class="dropdown-menu dropdown-menu-end bg-secondary border-0 rounded-0 rounded-bottom m-0">
-                            <!-- Your notifications dropdown content -->
+                        <div id="remindersDropdown" class="dropdown-menu dropdown-menu-end bg-secondary border-0 rounded-0 rounded-bottom m-0">
+                            <!-- Reminders will be loaded here -->
                         </div>
                     </div>
 
@@ -132,9 +132,9 @@
                         <h3>Reminders</h3>
                         <div class="container-fluid pt-4 px-4">
                             <div class="row g-4">
-                                <div class="col-sm-12 col-xl-6">
+                                <div class="col-12">
                                     <div class="bg-secondary text-center rounded p-5">
-                                        <h4>Create Reminder</h4>                                        
+                                        <h4>Create Reminder</h4>                                                                                                                        
                                         <form id="reminderForm">                                            
                                             <input type="hidden" id="customerID" name="customerID" value="0">                                                            
                                             
@@ -144,16 +144,16 @@
                                             <label for="Message">Message:</label>
                                             <input type="text" id="Message" name="Message" required>     
                                             <button class="btn btn-primary" type="submit">Create Reminder</button>                                                   
-                                        </form>
-                                            
-                                                                   
+                                        </form>   
+                                        <div id="confirmationMessage" style="display:none;"></div>                                                                                                            
                                     </div>
                                 </div>
+                                
                                 <div class="container" style="padding-top: 1rem;">
                                     <div class="row">
                                         <div class="col-12">
                                             <div class="bg-secondary rounded h-100 p-4">
-                                                <h6 class="mb-4">All Reminders</h6>
+                                                <h4 class="mb-4">All Reminders</h4>
                                                 <div class="table-responsive">
                                                     <table class="table">
                                                         <thead>
