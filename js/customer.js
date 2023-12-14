@@ -68,11 +68,7 @@ class YourClassName {
       console.log('Customer created:', responseBody);
       this.hideCreateCustomerForm();
     }catch (err) {
-      
-  
-      
       }
-      
   }
 
   showCreateCustomerForm = () => {
