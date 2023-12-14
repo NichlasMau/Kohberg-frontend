@@ -140,11 +140,9 @@
                         <span class="close" onclick="yourInstance.hideCreateCustomerForm()">&times;</span>
                         <h2>Create Customer</h2>
                         <!-- Login Form -->
-                        <form>
+                        <form id="customerForm">
                             <label for="name">Name:</label>
                             <input type="text" id="name" name="name" required>
-
-                            <input type="hidden" id="role" name="role" value="customer">
 
                             <label for="birthday">Birthday:</label>
                             <input type="date" id="birthday" name="birthday">
@@ -172,7 +170,7 @@
                             <p>Email: john.doe@example.com</p>
                             <p>Role: Admin</p>
                             <button type="button" onclick="closeMyProfileModal()">Close window</button>
-                            <button id="editProfileButton" onclick="yourInstance.showUpdateSalespersonForm()">Edit
+                            <button id="editProfileButton" >Edit
                                 Profile</button>
 
                             <!-- Form for updating salesperson details -->
@@ -186,7 +184,7 @@
                                 <!-- Add other fields you want to update -->
 
                                 <!-- Button to submit the update -->
-                                <button type="button" onclick="yourInstance.updateSalespersonDetails()">Save
+                                <button type="button" >Save
                                     Changes</button>
                         </div>
                     </div>
