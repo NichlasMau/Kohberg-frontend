@@ -1,3 +1,8 @@
+function getToken(){
+  const localstorage_user = JSON.parse(localStorage.getItem('user'))
+  return  localstorage_user.token
+}
+
 class YourClassName {
   constructor(apiBaseUrl) {
     this.apiBaseUrl = apiBaseUrl;
@@ -7,6 +12,8 @@ class YourClassName {
   domContentLoaded = () => {
     this.addCustomerLink();
   }
+
+
 
  
   async createCustomer() {
@@ -40,6 +47,7 @@ class YourClassName {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          'Authorization': 'Bearer ' + getToken()
         },
         body: requestBody,
       });
@@ -99,6 +107,7 @@ class YourClassName {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + getToken()
       },
       body: JSON.stringify(requestData),
     })
@@ -135,6 +144,7 @@ class YourClassName {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
+          'Authorization': 'Bearer ' + getToken()
         },
         body: requestBody,
       });
@@ -233,7 +243,7 @@ function closeMyProfileModal() {
 
 
 // Create an instance of YourClassName with the updated API base URL
-const yourInstance = new YourClassName('http://localhost:8080');
+const yourInstance = new YourClassName('https://kohberg-backend.azurewebsites.net');
 
 yourInstance.updateSalesperson(salespersonIDToUpdate, updatedSalespersonData);
 
