@@ -1,7 +1,3 @@
-function getToken(){
-  const localstorage_user = JSON.parse(localStorage.getItem('user'))
-  return  localstorage_user.token
-}
 
 class YourClassName {
   constructor(apiBaseUrl) {
@@ -17,6 +13,12 @@ class YourClassName {
     try {
       // Hent formelementet fra DOM
     const customerForm = document.getElementById('customerForm');
+
+    function getToken(){
+      const localstorage_user = JSON.parse(localStorage.getItem('user'))
+      return  localstorage_user.token
+    }
+    
 
     // Opret FormData-objekt med formdata
     const formData = new FormData(customerForm);
@@ -40,10 +42,9 @@ class YourClassName {
   
       const requestBody = {
         name: formData.get('name'),
-        role: formData.get('role'),
+        role: 'Customer',
         birthday: finalFormattedBirthday,
-        email: formData.get('email'),
-      };
+        email: formData.get('email')};
   
       console.log('Request Body:', requestBody);
   
@@ -53,7 +54,7 @@ class YourClassName {
           'Content-Type': 'application/json',
           'Authorization': 'Bearer ' + getToken()
         },
-        body: JSON.stringify(requestData),
+        body: JSON.stringify(requestBody),
       });
 
       const isJson = res.headers.get('content-type')?.includes('application/json');
